@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!--
+    Checkstyle 代码风格规则 — 软件工程 CI/CD 实验用
+    本配置在 Sun Checks 基础上做了教学简化
+-->
+
+<module name="Checker">
+    <!-- 排除自动生成的模块信息 -->
+    <module name="SuppressionSingleFilter">
+        <property name="files" value="module-info\.java"/>
+    </module>
+
+    <!-- ===== 文件级规则 ===== -->
+    <module name="RegexpSingleline">
+        <property name="format" value="\s+$"/>
+        <property name="message" value="行尾不应有多余空格"/>
+    </module>
+
+    <!-- LineLength 是文件级检查，必须放在 Checker 下，不能放 TreeWalker 里 -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
+    </module>
+
+    <!-- ===== TreeWalker：语法树级规则 ===== -->
+    <module name="TreeWalker">
+
+        <!-- 命名规范 -->
+        <module name="ConstantName">
+            <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+        </module>
+        <module name="LocalVariableName"/>
+        <module name="MethodName"/>
+        <module name="TypeName"/>
+
+        <!-- 导入检查 -->
+        <module name="AvoidStarImport"/>
+        <module name="UnusedImports"/>
+
+        <!-- 代码块 -->
+        <module name="NeedBraces"/>
+        <module name="LeftCurly"/>
+        <module name="RightCurly"/>
+
+        <!-- 杂项 -->
+        <module name="ModifierOrder"/>
+        <module name="UpperEll"/>
+
+        <!-- Javadoc：对 public 成员要求注释 -->
+        <module name="MissingJavadocMethod">
+            <property name="scope" value="public"/>
+            <property name="allowMissingPropertyJavadoc" value="true"/>
+        </module>
+    </module>
+</module>
