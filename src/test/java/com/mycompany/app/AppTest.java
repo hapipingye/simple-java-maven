@@ -24,12 +24,12 @@ public class AppTest {
      * 测试 1：无参构造器创建的对象，getMessage 应返回默认问候语
      */
     @Test
-    @DisplayName("无参构造器应返回默认消息 \"Hello World!\"")
+    @DisplayName("无参构造器应返回默认消息 \"Hello GWNG!\"")
     public void testAppHasAGreeting() {
         App app = new App();
         assertNotNull(app, "App 实例不应为 null");
-        assertEquals("Hello World!", app.getMessage(),
-                "默认消息应为 \"Hello World!\"");
+        assertEquals("Hello GWNG!", app.getMessage(),
+                "默认消息应为 \"Hello GWNG!\"");
     }
 
     /**

@@ -18,7 +18,7 @@ package com.mycompany.app;
 public class App {
 
     /** 默认问候语 */
-    private static final String DEFAULT_MESSAGE = "Hello World!";
+    private static final String DEFAULT_MESSAGE = "Hello GWNG!";
 
     /** 当前实例的问候语 */
     private final String message;
